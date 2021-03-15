@@ -118,9 +118,27 @@ class SinglyLinkedList {
         }
         console.log(arr);
     }
+    reverse() {
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        let next;
+        let prev = null;
+        for(let i = 0; i !== this.length; ++i) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
+    }
 }
 const sl = new SinglyLinkedList();
-sl.push("HELLO");
-sl.push("HELLO World");
-sl.push("HELLO World Now");
-sl.push("HELLO World eee");
+sl.push("100");
+sl.push("200");
+sl.push("300");
+sl.push("400");
+
+sl.print();
+sl.reverse();
+sl.print();
