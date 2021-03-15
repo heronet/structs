@@ -41,11 +41,49 @@ class SinglyLinkedList {
         }
         return current;
     }
+    shift() {
+        if(!this.head) return undefined;
+        let currentHead = this.head;
+        this.head = currentHead.next;
+        --this.length;
+        if(this.length === 0) {
+            this.tail = null;
+        }
+        return currentHead;
+    }
+    unshift(val) {
+        const node = new Node(val);
+        if(!this.head) {
+            this.head = node;
+            this.tail = node;
+        } else {
+            node.next = this.head;
+            this.head = node;
+        }
+        ++this.length;
+        return this;
+    }
+    get(index) {
+        if(index < 0 || index >= this.length) return null;
+        let node = this.head;
+        for(let i = 0; i !== index; ++i) {
+            node = node.next;
+        }
+        return node;
+    }
+    set(index, val) {
+        let node = this.get(index);
+        if(node) {
+            node.value = val;
+            return true;
+        } else { // else for noob safety
+            return false;
+        }
+    }
     
 }
 const sl = new SinglyLinkedList();
 sl.push("HELLO");
 sl.push("HELLO World");
 sl.push("HELLO World Now");
-
-sl.pop();
+sl.push("HELLO World Now");
