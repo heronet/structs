@@ -1,34 +1,39 @@
 #include <iostream>
 #include <memory>
 
+template <typename T>
 class Node {
     public:
-        std::string val;
-    std::shared_ptr<Node> next;
+        T val;
+        std::shared_ptr<Node<T>> next;
     public:
-        Node(std::string val);
+        Node(T val);
 };
 
-Node::Node(std::string val): val(val) {}
+template <typename T>
+Node<T>::Node(T val): val(val) {}
 
+template <typename T>
 class SinglyLinkedList {
     private:
-        std::shared_ptr<Node> head, tail;
+        std::shared_ptr<Node<T>> head, tail;
         int length;
     public:
         SinglyLinkedList();
-    void push(std::string&& val);
+    void push(T&& val);
     void print();
     void reverse();
     int size();
 };
 
-SinglyLinkedList::SinglyLinkedList(): length(0) {
+template <typename T>
+SinglyLinkedList<T>::SinglyLinkedList(): length(0) {
     head = nullptr;
     tail = head;
 }
-void SinglyLinkedList::push(std::string&& val) {
-    const auto node = std::make_shared <Node> (val);
+template <typename T>
+void SinglyLinkedList<T>::push(T&& val) {
+    const auto node = std::make_shared <Node<T>> (val);
     if (head == nullptr) {
         head = node;
         tail = head;
@@ -38,24 +43,27 @@ void SinglyLinkedList::push(std::string&& val) {
     }
     ++length;
 }
-void SinglyLinkedList::print() {
-    std::shared_ptr<Node> current = head;
+template <typename T>
+void SinglyLinkedList<T>::print() {
+    std::shared_ptr<Node<T>> current = head;
     while (current)
     {
-        std::printf("%s ", current -> val.c_str());
+        std::cout << current->val << ' ';
         current = current -> next;
     }
     std::printf("\n");
 }
-int SinglyLinkedList::size() {
+template <typename T>
+int SinglyLinkedList<T>::size() {
     return length;
 }
-void SinglyLinkedList::reverse() {
-    std::shared_ptr<Node> node = head;
+template <typename T>
+void SinglyLinkedList<T>::reverse() {
+    std::shared_ptr<Node<T>> node = head;
     head = tail;
     tail = node;
-    std::shared_ptr<Node> previous = nullptr;
-    std::shared_ptr<Node> next = nullptr;
+    std::shared_ptr<Node<T>> previous = nullptr;
+    std::shared_ptr<Node<T>> next = nullptr;
 
     for (size_t i = 0; i != length; ++i)
     {
@@ -67,10 +75,10 @@ void SinglyLinkedList::reverse() {
 }
 
 int main(int argc, char** argv) {
-    const std::shared_ptr<SinglyLinkedList> list = std::make_shared<SinglyLinkedList>();
-    list->push("One");
-    list->push("Two");
-    list->push("Three");
+    const std::shared_ptr<SinglyLinkedList<int>> list = std::make_shared<SinglyLinkedList<int>>();
+    list->push(1);
+    list->push(2);
+    list->push(3);
     list->print();
     list->reverse();
     list->print();
