@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Structs
 {
@@ -21,11 +18,12 @@ namespace Structs
         public void Push(T value)
         {
             var node = new Node<T>(value);
-            if(Head == null)
+            if (Head == null)
             {
                 Head = node;
                 Tail = Head;
-            } else
+            }
+            else
             {
                 Tail.Next = node;
                 Tail = Tail.Next;
@@ -34,13 +32,19 @@ namespace Structs
         }
         public void Print()
         {
-            List < T > = new List<T>();
+            List<T> arr = new List<T>();
             var current = Head;
-            while(current != null)
+            while (current != null)
             {
-                Console.WriteLine(current.Value);
+                arr.Add(current.Value);
                 current = current.Next;
             }
+            string vals = "[";
+            arr.ForEach(val => vals += (val.ToString() + ", "));
+            vals = vals.Remove(vals.LastIndexOf(','), 1);
+            vals = vals.Trim();
+            vals += ']';
+            System.Console.WriteLine(vals);
         }
         public void Reverse()
         {
@@ -49,7 +53,7 @@ namespace Structs
             Tail = node;
             Node<T> previous = null;
 
-            for(int i = 0; i != Size; ++i)
+            for (int i = 0; i != Size; ++i)
             {
                 Node<T> next = node.Next;
                 node.Next = previous;

@@ -1,0 +1,16 @@
+/home/sirat/Desktop/gitlocal/structs/C#/bin/Debug/net5.0/C#
+/home/sirat/Desktop/gitlocal/structs/C#/bin/Debug/net5.0/C#.deps.json
+/home/sirat/Desktop/gitlocal/structs/C#/bin/Debug/net5.0/C#.runtimeconfig.json
+/home/sirat/Desktop/gitlocal/structs/C#/bin/Debug/net5.0/C#.runtimeconfig.dev.json
+/home/sirat/Desktop/gitlocal/structs/C#/bin/Debug/net5.0/C#.dll
+/home/sirat/Desktop/gitlocal/structs/C#/bin/Debug/net5.0/ref/C#.dll
+/home/sirat/Desktop/gitlocal/structs/C#/bin/Debug/net5.0/C#.pdb
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/C#.csproj.AssemblyReference.cache
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/C#.GeneratedMSBuildEditorConfig.editorconfig
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/C#.AssemblyInfoInputs.cache
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/C#.AssemblyInfo.cs
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/C#.csproj.CoreCompileInputs.cache
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/C#.dll
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/ref/C#.dll
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/C#.pdb
+/home/sirat/Desktop/gitlocal/structs/C#/obj/Debug/net5.0/C#.genruntimeconfig.cache
