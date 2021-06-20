@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include "colors.hxx"
 
 template <typename T>
 class Node {
@@ -48,10 +49,10 @@ void SinglyLinkedList<T>::print() {
     std::shared_ptr<Node<T>> current = head;
     while (current)
     {
-        std::cout << "\033[36m" << current->val << ' ';
+        std::cout << colors::fg_yellow << current->val << ' ';
         current = current -> next;
     }
-    std::printf("\n\033[0m");
+    std::printf("\n%s", colors::reset);
 }
 template <typename T>
 int SinglyLinkedList<T>::size() {
