@@ -1,9 +1,9 @@
 class SinglyLinkedList {
-  head: Node | null = null;
-  tail: Node | null = null;
+  head: ListNode | null = null;
+  tail: ListNode | null = null;
   size: number = 0;
   push(val: any) {
-    const node = new Node(val);
+    const node = new ListNode(val);
     if(!this.head) {
       this.head = node;
       this.tail = this.head;
@@ -37,9 +37,9 @@ class SinglyLinkedList {
     console.log(arr);
   }
 }
-class Node {
+class ListNode {
   value: any;
-  next: Node | null = null;
+  next: ListNode | null = null;
   constructor(val: any) {
     this.value = val;
   }
