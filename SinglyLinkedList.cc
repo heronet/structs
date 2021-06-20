@@ -48,10 +48,10 @@ void SinglyLinkedList<T>::print() {
     std::shared_ptr<Node<T>> current = head;
     while (current)
     {
-        std::cout << current->val << ' ';
+        std::cout << "\033[36m" << current->val << ' ';
         current = current -> next;
     }
-    std::printf("\n");
+    std::printf("\n\033[0m");
 }
 template <typename T>
 int SinglyLinkedList<T>::size() {
