@@ -4,7 +4,7 @@ class Node {
         this.next = null;
     }
 }
-class SinglyLinkedList {
+class SinglyLinkedListJS {
     constructor() {
         this.head = null;
         this.tail = null;
@@ -93,13 +93,13 @@ class SinglyLinkedList {
         console.log(arr);
     }
 }
-const list = new SinglyLinkedList()
-list.push("HELLO");
-list.push("HELLO2");
-list.push("HELLO3");
-list.push("HELLO4");
-list.push("HELLO5");
+const listJs = new SinglyLinkedListJS()
+listJs.push("HELLO");
+listJs.push("HELLO2");
+listJs.push("HELLO3");
+listJs.push("HELLO4");
+listJs.push("HELLO5");
 
-list.print();
-list.reverse();
-list.print();
+listJs.print();
+listJs.reverse();
+listJs.print();
